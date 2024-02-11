@@ -15,6 +15,8 @@ export const Recommended = ({
 
     const showLabel = !collapsed && data.length > 0;
 
+    console.log(data);
+    
     return (
         <div>
             {showLabel && (

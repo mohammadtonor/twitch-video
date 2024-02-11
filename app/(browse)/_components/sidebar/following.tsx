@@ -32,7 +32,6 @@ export const Following = ({
                        key={follow.following.id}
                        username={follow.following.userName}
                        imageUrl={follow.following.imageUrl}
-                       isLive 
                     />
                 ))}
             </ul>

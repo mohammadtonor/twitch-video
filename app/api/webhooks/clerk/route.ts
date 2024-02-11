@@ -53,7 +53,12 @@ export async function POST(req: Request) {
             data: {
                 externalUserId: payload.data.id,
                 userName: payload.data.username,
-                imageUrl: payload.data.image_url
+                imageUrl: payload.data.image_url,
+                streame: {
+                    create: {
+                        name: `${payload.data.username}'s stream`
+                    }
+                }
             }
         })
     }
