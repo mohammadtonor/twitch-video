@@ -14,12 +14,28 @@ import { Header, HeaderSkeleton } from "./header";
 import { InfoCard } from "./info-card";
 import { AboutCard } from "./aboutCard";
 
+type CustomStream = {
+    id: string;
+    isChatEnabled: boolean;
+    isChatDelayed: boolean;
+    isChatFollowersOnly: boolean;
+    isLive: boolean;
+    thumbnailUrl: string | null;
+    name: string;
+}
+
+type CustomUser ={
+   id: string;
+   userName: string;
+   bio: string;
+   stream: CustomStream | null;
+   imageUrl: string;
+   _count: {followedBy: number}
+}
+
 interface StreamPlayerProps {
-    user: User & { 
-        streame: Stream | null
-        _count: { followedBy: number}
-    }
-    stream: Stream;
+    user: CustomUser;
+    stream: CustomStream;
     isFollowing: boolean;
 }
 
@@ -28,17 +44,15 @@ export const StreamPlayer = ({
     stream,
     isFollowing
 }: StreamPlayerProps) => {
-    const { collapsed } = useChatSidebar(state => state);
     const { 
         token,
         name,
         identity
-     } = useViewerToken(user.id);
-
-     console.log({token, name, identity});
-     
-
-     if(!token || !identity || !name ) {
+    } = useViewerToken(user.id);
+    
+    const { collapsed } = useChatSidebar(state => state);
+         
+     if(!token || !identity || !name) {
         return (
             <StreamPlayerSkeleton />
         )
