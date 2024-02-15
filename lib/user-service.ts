@@ -29,6 +29,8 @@ export const getUserByUsername = async (userName: string) => {
       }
      }
    });   
+   console.log(user);
+   
    return user;
 }
 

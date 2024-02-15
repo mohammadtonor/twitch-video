@@ -31,7 +31,7 @@ export const KeyCard = ({
                         <CopyButton value={value || ""}/>
                     </div>
                     <Button
-                    onClick={() => setShow(!show)}
+                        onClick={() => setShow(!show)}
                         size='sm'
                         variant='link'
                     >

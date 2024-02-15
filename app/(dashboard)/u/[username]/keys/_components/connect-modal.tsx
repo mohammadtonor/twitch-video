@@ -44,7 +44,7 @@ export const ConnectModal = () => {
                  toast.success('Ingress created')
                  closeRef.current?.click()
              })
-             .catch(() => toast.error('Somthinf went wrong.'))
+             .catch((er) => toast.error('Somthinf went wrong.'))
         })
     }
 
