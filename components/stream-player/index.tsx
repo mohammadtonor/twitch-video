@@ -16,28 +16,28 @@ import { AboutCard } from "./aboutCard";
 
 type CustomStream = {
     id: string;
-    isChatEnabled: boolean;
     isChatDelayed: boolean;
+    isChatEnabled: boolean;
     isChatFollowersOnly: boolean;
     isLive: boolean;
     thumbnailUrl: string | null;
     name: string;
-}
-
-type CustomUser ={
-   id: string;
-   userName: string;
-   bio: string;
-   stream: CustomStream | null;
-   imageUrl: string;
-   _count: {followedBy: number}
-}
-
-interface StreamPlayerProps {
+  };
+  
+  type CustomUser = {
+    id: string;
+    userName: string;
+    bio: string | null;
+    streame: CustomStream | null;
+    imageUrl: string;
+    _count: { followedBy: number }
+  };
+  
+  interface StreamPlayerProps {
     user: CustomUser;
     stream: CustomStream;
     isFollowing: boolean;
-}
+  }
 
 export const StreamPlayer = ({
     user,

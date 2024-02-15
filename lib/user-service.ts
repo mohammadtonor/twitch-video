@@ -7,10 +7,10 @@ export const getUserByUsername = async (userName: string) => {
      },
      select:{
       id: true,
+      externalUserId: true,
       userName: true,
       bio: true,
       imageUrl: true,
-      externalUserId: true,
       streame: {
         select: {
           id: true,
@@ -19,7 +19,7 @@ export const getUserByUsername = async (userName: string) => {
           isChatEnabled: true,
           isChatFollowersOnly: true,
           thumbnailUrl: true,
-          name: true
+          name: true,
         },
       },
       _count: {
