@@ -21,7 +21,7 @@ export const Actions = ({
     const handleFollow = () => {
       startTransition(() => {
           onFollow(userId)
-            .then((data) => toast.success(`You are now following ${data.following.userName}`))
+            .then((data) => toast.success(`You are now following ${data?.following.userName}`))
             .catch(() => toast.error('Failed to follow!') );
         })
     }
@@ -29,7 +29,7 @@ export const Actions = ({
     const handleUnFollow = () => {
         startTransition(() => {
             onUnfollow(userId)
-              .then((data) => toast.success(`You are now unfollowed ${data.following.userName}`))
+              .then((data) => toast.success(`You are now unfollowed ${data?.following.userName}`))
               .catch(() => toast.error('Failed to unfollow!') );
           })
     }
@@ -45,7 +45,7 @@ export const Actions = ({
     const handleBlock = () => {
         startTransition(() => {
             OnBlock(userId)
-                .then((data) => toast.success(`You are now Block ${data.blocked.userName}`))
+                .then((data) => toast.success(`You are now Block ${data?.blocked.userName}`))
                 .catch(() => toast.error('Something went wrong!'));
         })
     }
